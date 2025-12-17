@@ -1,0 +1,408 @@
+/* ================= CONFIGURAÇÕES GERAIS ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #f0f2f5; /* Cinza azulado do Sampa Smash */
+    color: #1f2937;
+}
+
+/* ================= NAVBAR (PRETO PURO) ================= */
+.navbar {
+    background-color: #000;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: center; /* No Sampa Smash o menu é centralizado */
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+/* Efeito do botão "Início" branco */
+.active-link {
+    background-color: #fff;
+    color: #000 !important;
+}
+
+/* ================= BANNER E LOGO ================= */
+.store-profile-section {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 0 15px;
+}
+
+/* ================= BANNER AJUSTADO ================= */
+.promo-banner {
+    width: 100%;
+    /* Diminuímos a altura para o banner ficar mais "fino" */
+    height: 500px; /* Teste entre 250px e 300px para ver qual gosta mais */
+    
+    background-color: #fff; 
+    padding: 6px;           
+    border-radius: 16px;    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    
+    display: flex;
+    overflow: hidden;       
+    position: relative;
+    z-index: 1;
+}
+
+.promo-banner img {
+    width: 100%;
+    height: 100%;
+    /* Mantém a foto centralizada e preenchendo o espaço sem distorcer */
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 12px; 
+    display: block;
+}
+
+/* Ajuste específico para garantir que o logo não suba demais se o banner for curto */
+@media (min-width: 769px) {
+    .store-data-row {
+        margin-top: -50px; /* Ajuste fino para o logo subir no ponto certo */
+    }
+}
+
+/* ================= LOGO E DADOS (CORREÇÃO DE CAMADA) ================= */
+.store-data-row {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 20px;
+    margin-top: -60px; /* Sobe o logo para dentro do banner */
+    position: relative; 
+    z-index: 10; /* VALOR ALTO: Garante que o logo fique SEMPRE por cima da imagem */
+}
+
+.profile-logo {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 8px; /* Espaço branco interno do logo */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+
+.store-details {
+    margin-left: 24px;
+    padding-bottom: 10px; /* Alinhamento fino */
+}
+
+.store-details h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2e3e4d; /* Cor exata do título */
+    margin-bottom: 4px;
+}
+
+.store-info {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.status-open {
+    color: #10b981; /* Verde esmeralda do Sampa */
+    font-weight: 700;
+}
+
+/* ================= SEÇÃO DE BUSCA ================= */
+.store-actions {
+    max-width: 1200px; /* Largura idêntica ao banner */
+    margin: 35px auto;
+    padding: 0 15px;
+}
+
+.list-search-container {
+    display: flex;
+    gap: 12px; /* Espaçamento curto entre os itens */
+}
+
+/* Estilo do Botão de Categoria */
+.btn-list {
+    width: 260px; /* Largura fixa para manter o padrão */
+    background-color: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4b5563;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-list:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+/* Wrapper para o Input de Busca (para colocar o ícone dentro) */
+.search-wrapper {
+    flex: 1; /* Faz a barra de busca ocupar o resto do espaço */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    color: #9ca3af; /* Cor cinza do ícone */
+    font-size: 16px;
+}
+
+.input-search {
+    width: 100%;
+    padding: 12px 16px 12px 45px; /* Padding extra na esquerda para o ícone */
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    background-color: #fff;
+    font-size: 15px;
+    color: #1f2937;
+    outline: none; /* Remove a borda azul ao clicar */
+    transition: 0.2s;
+}
+
+.input-search:focus {
+    border-color: #d1d5db;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.input-search::placeholder {
+    color: #9ca3af;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+    .store-data-row {
+        flex-direction: column;
+        align-items: center;
+        margin-top: -75px;
+        text-align: center;
+    }
+    .store-details { margin-left: 0; margin-top: 15px; }
+    .list-search-container { flex-direction: column; }
+    .btn-list { width: 100%; }
+}
+
+/* Layout Principal */
+.menu-container-main {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+.menu-products-area { flex: 3; }
+.side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+/* Títulos das Categorias */
+.category-title {
+    font-size: 20px;
+    color: #3e3e3e;
+    margin: 30px 0 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Grid de 2 colunas para os cards horizontais */
+.products-grid-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Estilo do Card Horizontal */
+.product-card-horizontal {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+}
+
+.product-card-horizontal:hover { border-color: #bbb; }
+
+.card-content h3 { font-size: 15px; margin-bottom: 5px; }
+.card-content p { font-size: 12px; color: #717171; line-height: 1.4; }
+.card-content .price { display: block; margin-top: 10px; font-weight: bold; color: #2e3e4d; }
+
+.card-image { width: 85px; height: 85px; background: #f5f5f5; border-radius: 5px; }
+
+/* Estilo da Lateral (Fidelidade e Sacola) */
+.fidelity-card, .cart-box {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    padding: 15px;
+}
+
+.f-header { display: flex; align-items: center; gap: 10px; font-weight: bold; margin-bottom: 10px; }
+.cart-empty { text-align: center; padding: 30px 0; color: #999; }
+.btn-checkout { width: 100%; padding: 12px; background: #ccc; border: none; border-radius: 5px; color: #fff; font-weight: bold; }
+
+/* ================= FOOTER ================= */
+
+/* ================= FOOTER ================= */
+.main-footer {
+    background-color: #fff;
+    border-top: 1px solid #e1e4e8;
+    margin-top: 80px;
+    padding-top: 50px;
+    color: #4b5563;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-col h3 {
+    color: #1f2937;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #000;
+    padding-left: 5px;
+}
+
+.footer-logo {
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    color: #1f2937;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #facc15; /* Cor de abelha/mel no hover */
+    transform: scale(1.1);
+}
+
+/* Faixa Final */
+.footer-bottom {
+    margin-top: 50px;
+    padding: 25px 0;
+    border-top: 1px solid #f3f4f6;
+    background-color: #f9fafb;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+    color: #d1d5db;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

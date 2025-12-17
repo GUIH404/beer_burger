@@ -1,0 +1,9 @@
+# Ignora a pasta de dependências em qualquer lugar
+node_modules/
+
+# Ignora o arquivo de senhas em qualquer lugar
+.env
+
+# Ignora arquivos de sistema
+.DS_Store
+Thumbs.db

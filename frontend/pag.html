@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Burguer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-content">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="pag.html" class="active-link"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Pedidos</a></li>
+                <li><a href="#">Admin</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-content">
+    <section class="store-profile-section">
+        <div class="promo-banner">
+            <img src="img/banner.png" alt="">
+        </div>
+
+        <div class="store-data-row">
+            <div class="profile-logo">
+                <img src="img/image.png" alt="Logo Bee Burguer">
+            </div>
+
+            <div class="store-details">
+                <h1>Bee Burguer</h1>
+                <div class="store-info">
+                    <span class="status-open">Aberto até às 23h45</span>
+                    <span class="dot">•</span>
+                    <span>São Paulo - SP</span>
+                    <span class="dot">•</span>
+                    <span class="status-more-information">Mais informações</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="store-actions">
+        <div class="list-search-container">
+            <button class="btn-list">
+                <span>Lista de categorias</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Busque por um produto" class="input-search">
+            </div>
+        </div>
+    </section>
+    <<section class="add-iten-forms" style="max-width: 1200px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2 style="margin-bottom: 15px;">Adicionar Novo Item ao Cardápio</h2>
+        <form style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <input id="nome-produto" type="text" placeholder="Nome do Produto" style="flex: 1 1 200px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input id="desc-produto" type="text" placeholder="Descrição do Produto" style="flex: 2 1 400px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input id="preço-produto" type="number" placeholder="Preço (R$)" style="flex: 1 1 150px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <select id="Categorias" style="flex: 1 1 200px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                <option value="" disabled selected>Selecione a Categoria</option>
+                <option value="combos">Combos</option>
+                <option value="burgers">Burgers</option>
+                <option value="acompanhamentos">Acompanhamentos</option>
+                <option value="bebidas">Bebidas</option>
+            </select>
+
+        </form>
+        <br>
+        <button id="btn-adicionar" type="submit" style="flex: 1 1 150px; padding: 10px; background-color: #fbbf24; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Adicionar Item</button>
+    </section>
+
+    <section class="menu-container-main">
+        <div class="menu-products-area" id="lista-produtos">
+        </div>
+
+            <div class="category-block">
+        <aside class="side-content">
+            <div class="cart-box">
+                <div class="cart-header"><span>Calcular taxa e tempo</span> <i class="fa-solid fa-chevron-right"></i></div>
+                <div class="cart-empty"><i class="fa-solid fa-bag-shopping"></i> <p>Sacola vazia</p></div>
+                <button class="btn-checkout">Sacola vazia</button>
+            </div>
+        </aside>
+    </section>
+</main>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h2 class="footer-logo">Bee Burguer</h2>
+            <p>O melhor smash burger de São Paulo, feito com ingredientes selecionados e muito mel! 🍯🐝</p>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Meus Pedidos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Institucional</h3>
+            <ul>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Privacidade</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contato</h3>
+            <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
+            <p><i class="fa-solid fa-envelope"></i> contato@beeburguer.com.br</p>
+            <p><i class="fa-solid fa-location-dot"></i> São Paulo - SP</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2024 Bee Burguer - Todos os direitos reservados.</p>
+            <div class="payment-methods">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-pix"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
