@@ -1,0 +1,172 @@
+/* Importando fontes de impacto para o tema HQ */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f1f1f1;
+    /* Padrão de pontos Ben-Day (estilo gibi) */
+    background-image: radial-gradient(#d1d1d1 15%, transparent 16%);
+    background-size: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Mantém as onomatopeias dentro da tela */
+    position: relative;
+}
+
+/* --- Onomatopeias de Fundo --- */
+.onomatopoeia {
+    position: absolute;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(50px, 8vw, 100px);
+    color: #ffbe0b; /* Amarelo do logo */
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 6px 6px 0px #000;
+    z-index: 1;
+    opacity: 0.35;
+    user-select: none;
+}
+
+.bite-1 { top: 10%; left: 5%; transform: rotate(-15deg); color: #e63946; }
+.bite-2 { bottom: 10%; right: 8%; transform: rotate(10deg); color: #ffbe0b; }
+.bite-3 { top: 15%; right: 10%; transform: rotate(-25deg); color: #004e9a; }
+.blast-bg { bottom: 15%; left: 10%; transform: rotate(5deg) scale(1.3); color: #ffbe0b; }
+
+/* --- Container Principal --- */
+.auth-container {
+    background: #ffffff;
+    padding: 40px;
+    border: 5px solid #000; /* Traço grosso de desenho */
+    border-radius: 4px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 15px 15px 0px #e63946; /* Sombra sólida Pop Art */
+    position: relative;
+    z-index: 10;
+}
+
+/* Detalhe "POW" decorativo no canto */
+.auth-container::after {
+    content: 'NHAC!';
+    position: absolute;
+    top: -20px;
+    right: -25px;
+    background: #ffbe0b;
+    border: 3px solid #000;
+    padding: 5px 15px;
+    font-family: 'Bangers';
+    font-size: 22px;
+    transform: rotate(15deg);
+    box-shadow: 4px 4px 0px #000;
+}
+
+.logo-wrapper {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo-icon {
+    font-size: 45px;
+    color: #e63946;
+    filter: drop-shadow(3px 3px 0px #000);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 48px;
+    color: #004e9a; /* Azul do logo */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1.5px #000;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.1));
+}
+
+/* --- Formulário --- */
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 0px; /* Quadrado estilo HQ */
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    background-color: #fff9c4;
+    transform: scale(1.02);
+}
+
+/* --- Botão Explosivo --- */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background: #ffbe0b;
+    color: #000;
+    border: 4px solid #000;
+    font-family: 'Bangers', cursive;
+    font-size: 28px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 0px #000;
+    transition: 0.1s;
+}
+
+button:hover {
+    background: #ffdf00;
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #000;
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #e63946;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    padding: 3px 10px;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.login-link a:hover {
+    background: #e63946;
+    color: #fff;
+}

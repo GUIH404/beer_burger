@@ -218,6 +218,49 @@ body {
     color: #9ca3af;
 }
 
+/* ================= BOTÃO DE EXCLUIR (ADMIN) ================= */
+
+.btn-excluir {
+    background-color: #fff1f2; /* Fundo vermelho bem clarinho */
+    color: #e11d48;            /* Texto e ícone vermelho */
+    border: 1px solid #fecdd3;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.btn-excluir i {
+    font-size: 14px;
+}
+
+.btn-excluir:hover {
+    background-color: #e11d48; /* Fica todo vermelho no hover */
+    color: #ffffff;
+    border-color: #e11d48;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(225, 29, 72, 0.2);
+}
+
+.btn-excluir:active {
+    transform: translateY(0);
+}
+
+/* Ajuste no card para o botão não ficar colado */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
 /* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
     .store-data-row {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Burger Blast</title>
+    <link rel="stylesheet" href="../assets/css/cadastro.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="onomatopoeia bite-1">CRUNCH!</div>
+    <div class="onomatopoeia bite-2">CHOMP!</div>
+    <div class="onomatopoeia bite-3">NHAC!</div>
+    <div class="onomatopoeia blast-bg">POW!</div>
+
+    <div class="auth-container">
+        <div class="logo-wrapper">
+            <i class="fas fa-hamburger logo-icon"></i>
+            <h2>Burger Blast</h2>
+        </div>
+        
+        <form id="form-cadastro">
+            <div class="form-group">
+                <label for="cad-nome">Recruta (Nome)</label>
+                <input type="text" id="cad-nome" placeholder="Seu nome heroico" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cad-email">Super E-mail</label>
+                <input type="email" id="cad-email" placeholder="heroi@blast.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cad-senha">Senha Secreta</label>
+                <input type="password" id="cad-senha" placeholder="********" required>
+            </div>
+
+            <button type="submit">Juntar-se à Equipe!</button>
+        </form>
+
+        <p class="login-link">Já é um herói? <a href="login.html">Fazer Login</a></p>
+    </div>
+
+    <script src="../assets/js/cadastro.js"></script> 
+</body>
+</html>
