@@ -4,7 +4,7 @@ class ProdutoController {
     async Adicionar(req, res) {
         try {
             const result = await ProdutoService.Criar(req.body);
-            res.status(201).json({ message: "Lanche Salvo", id: result.insertId });
+            res.status(201).json({ message: "Lanche Salvo", id: result.produtoId });
         } catch (error) {
             console.log(error);
             res.status(500).json({ message: "Erro no servidor", error: error.message });

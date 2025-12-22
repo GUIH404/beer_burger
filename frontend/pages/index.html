@@ -13,7 +13,7 @@
     <div class="nav-content">
         <nav class="nav-menu">
             <ul>
-                <li><a href="pag.html" class="active-link"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a href="index.html" class="active-link"><i class="fa-solid fa-house"></i> Início</a></li>
                 <li><a href="#">Promoções</a></li>
                 <li><a href="#">Pedidos</a></li>
                 <li><a href="cadastro.html">Cadastrar/Entrar</a></li>
@@ -25,7 +25,7 @@
 <main class="main-content">
     <section class="store-profile-section">
         <div class="promo-banner">
-            <img src="../assets/img/banner2.png" alt="">
+            <img src="../assets/img/banner2.png" alt="Banner Principal">
         </div>
 
         <div class="store-data-row">
@@ -48,6 +48,10 @@
 
     <section class="store-actions">
         <div class="list-search-container">
+            <button id="btn-open-create" class="btn-new-product">
+                <i class="fa-solid fa-plus"></i> Novo Produto
+            </button>
+
             <button class="btn-list">
                 <span>Lista de categorias</span>
                 <i class="fa-solid fa-chevron-down"></i>
@@ -59,30 +63,11 @@
             </div>
         </div>
     </section>
-    <section class="add-iten-forms" style="max-width: 1200px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <h2 style="margin-bottom: 15px;">Adicionar Novo Item ao Cardápio</h2>
-        <form style="display: flex; flex-wrap: wrap; gap: 15px;">
-            <input id="nome-produto" type="text" placeholder="Nome do Produto" style="flex: 1 1 200px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input id="desc-produto" type="text" placeholder="Descrição do Produto" style="flex: 2 1 400px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input id="preço-produto" type="number" placeholder="Preço (R$)" style="flex: 1 1 150px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <select id="Categorias" style="flex: 1 1 200px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                <option value="" disabled selected>Selecione a Categoria</option>
-                <option value="combos">Combos</option>
-                <option value="burgers">Burgers</option>
-                <option value="acompanhamentos">Acompanhamentos</option>
-                <option value="bebidas">Bebidas</option>
-            </select>
-
-        </form>
-        <br>
-        <button id="btn-adicionar" type="submit" style="flex: 1 1 150px; padding: 10px; background-color: #fbbf24; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Adicionar Item</button>
-    </section>
 
     <section class="menu-container-main">
         <div class="menu-products-area" id="lista-produtos">
-        </div>
+            </div>
 
-            <div class="category-block">
         <aside class="side-content">
             <div class="cart-box">
                 <div class="cart-header"><span>Calcular taxa e tempo</span> <i class="fa-solid fa-chevron-right"></i></div>
@@ -92,10 +77,11 @@
         </aside>
     </section>
 </main>
+
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-col">
-            <h2 class="footer-logo">Blast Burger</h2>
+            <h2 class="footer-logo">Burger Blast</h2>
             <p>O melhor Super Burger de São Paulo, feito com ingredientes selecionados!</p>
             <div class="footer-social">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -118,7 +104,6 @@
             <h3>Institucional</h3>
             <ul>
                 <li><a href="#">Sobre nós</a></li>
-                <li><a href="#">Termos de uso</a></li>
                 <li><a href="#">Privacidade</a></li>
                 <li><a href="#">Trabalhe conosco</a></li>
             </ul>
@@ -127,14 +112,14 @@
         <div class="footer-col">
             <h3>Contato</h3>
             <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
-            <p><i class="fa-solid fa-envelope"></i> contato@beeburguer.com.br</p>
+            <p><i class="fa-solid fa-envelope"></i> contato@burgerblast.com.br</p>
             <p><i class="fa-solid fa-location-dot"></i> São Paulo - SP</p>
         </div>
     </div>
 
     <div class="footer-bottom">
         <div class="footer-bottom-content">
-            <p>&copy; 2024 Bee Burguer - Todos os direitos reservados.</p>
+            <p>&copy; 2024 Burger Blast - Todos os direitos reservados.</p>
             <div class="payment-methods">
                 <i class="fa-brands fa-cc-visa"></i>
                 <i class="fa-brands fa-cc-mastercard"></i>
@@ -143,6 +128,99 @@
         </div>
     </div>
 </footer>
+
+<div id="product-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-modal-btn close-details">&times;</button>
+        <div class="modal-body">
+            <div class="modal-image-col">
+                <img id="modal-img" src="" alt="Produto">
+            </div>
+            <div class="modal-info-col">
+                <h2 id="modal-title">Nome do Produto</h2>
+                
+                <div class="modal-ingredients-section">
+                    <h4>Ingredientes:</h4>
+                    <ul id="modal-ingredients-list">
+                        </ul>
+                </div>
+                
+                <p id="modal-desc" class="modal-description" style="margin-top: 15px; font-style: italic;">Descrição...</p>
+                
+                <div class="modal-footer-actions">
+                    <div class="price-qty-row">
+                        <span class="label">Preço:</span>
+                        <span id="modal-price" class="modal-price-display">R$ 00,00</span>
+                    </div>
+                    <div class="actions-row">
+                        <div class="qty-selector">
+                            <button id="btn-minus">-</button>
+                            <span id="qty-number">1</span>
+                            <button id="btn-plus">+</button>
+                        </div>
+                        <button class="btn-add-modal">
+                            <span>Adicionar</span>
+                            <span id="btn-total-price">R$ 00,00</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="create-modal" class="modal-overlay">
+    <div class="modal-content modal-sm">
+        <button class="close-modal-btn close-create">&times;</button>
+        
+        <div class="modal-header">
+            <h2>Adicionar Novo Item</h2>
+        </div>
+
+        <div class="modal-form-body">
+            <form id="form-create-product">
+                <div class="form-group">
+                    <label>Nome do Produto</label>
+                    <input id="new-nome" type="text" placeholder="Ex: X-Bacon" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição (Aparece no card da grade)</label>
+                    <textarea id="new-desc" rows="2" placeholder="Breve resumo..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Ingredientes (Aparece no card flutuante)</label>
+                    <div id="ingredients-container">
+                        </div>
+                    <button type="button" id="btn-add-ingredient-field" class="btn-add-ing-action">
+                        <i class="fa-solid fa-plus"></i> Adicionar Ingrediente
+                    </button>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Preço (R$)</label>
+                        <input id="new-price" type="number" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <select id="new-category" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="combos">Combos</option>
+                            <option value="burgers">Burgers</option>
+                            <option value="acompanhamentos">Acompanhamentos</option>
+                            <option value="bebidas">Bebidas</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit-create">Salvar Produto</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script src="../assets/js/script.js"></script>
 </body>
 </html>

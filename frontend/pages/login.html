@@ -1,1 +1,229 @@
-HELLO WORLD
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Blast - Login</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= RESET ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Para os textos flutuantes não criarem scroll */
+            position: relative;
+            
+            /* Padrão de bolinhas (Halftone) igual da imagem */
+            background-image: radial-gradient(#d1d5db 15%, transparent 16%);
+            background-size: 20px 20px;
+            background-color: #f9fafb;
+        }
+
+        /* ================= DECORAÇÃO DE FUNDO (TEXTOS FLUTUANTES) ================= */
+        .comic-bg-text {
+            position: absolute;
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #d1d5db; /* Cinza claro */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 0;
+            user-select: none;
+            text-shadow: 2px 2px 0px #9ca3af;
+            transform: rotate(-5deg);
+        }
+
+        .bg-1 { top: 10%; left: 5%; color: #f87171; text-shadow: 3px 3px 0 #000; transform: rotate(-15deg); }
+        .bg-2 { bottom: 15%; right: 10%; color: #fbbf24; text-shadow: 3px 3px 0 #000; transform: rotate(10deg); }
+        .bg-3 { top: 20%; right: 15%; color: #60a5fa; text-shadow: 3px 3px 0 #000; transform: rotate(15deg); }
+        .bg-4 { bottom: 10%; left: 10%; color: #fbbf24; text-shadow: 3px 3px 0 #000; transform: rotate(-10deg); }
+
+        /* ================= CARD DE LOGIN ================= */
+        .login-card {
+            background-color: #fff;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border: 3px solid #000; /* Borda grossa preta */
+            position: relative;
+            z-index: 10;
+            /* Sombra vermelha sólida deslocada */
+            box-shadow: 12px 12px 0px #ef4444; 
+        }
+
+        /* O adesivo amarelo "LOGIN!" */
+        .sticker-tag {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #fbbf24;
+            border: 2px solid #000;
+            padding: 5px 15px;
+            font-family: 'Bangers', cursive;
+            font-size: 1.2rem;
+            transform: rotate(15deg);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            z-index: 20;
+        }
+
+        /* Cabeçalho do Card */
+        .card-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .brand-name {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: #000; /* Pode ser azul também: #1d4ed8 */
+            text-shadow: 2px 2px 0 #fbbf24; /* Sombra amarela */
+            line-height: 1;
+            letter-spacing: 1px;
+            transform: skew(-2deg); /* Leve inclinação */
+        }
+
+        /* ================= FORMULÁRIO ================= */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #000;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            border: 2px solid #000; /* Borda grossa nos inputs */
+            outline: none;
+            background-color: #fff;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus {
+            background-color: #fffbeb; /* Amarelo bem claro */
+            box-shadow: 4px 4px 0 rgba(0,0,0,1); /* Sombra dura ao focar */
+            transform: translate(-2px, -2px);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #fbbf24; /* Amarelo Burger Blast */
+            border: 2px solid #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 5px 5px 0 #000; /* Sombra preta dura */
+            transition: all 0.1s ease;
+            margin-top: 10px;
+            font-style: italic; /* Dá sensação de movimento */
+        }
+
+        .btn-submit:hover {
+            transform: translate(2px, 2px); /* Efeito de apertar */
+            box-shadow: 3px 3px 0 #000;
+        }
+
+        .btn-submit:active {
+            transform: translate(5px, 5px);
+            box-shadow: 0px 0px 0 #000;
+        }
+
+        /* ================= RODAPÉ DO CARD ================= */
+        .card-footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .card-footer a {
+            color: #000;
+            background-color: #000;
+            color: #fff;
+            padding: 2px 6px;
+            text-decoration: none;
+            margin-left: 5px;
+            display: inline-block;
+            transform: skew(-10deg);
+        }
+
+        .card-footer a:hover {
+            background-color: #ef4444;
+        }
+
+        /* Responsivo mobile */
+        @media (max-width: 480px) {
+            .login-card {
+                width: 90%;
+                box-shadow: 8px 8px 0px #ef4444; 
+            }
+            .comic-bg-text { font-size: 3rem; opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="comic-bg-text bg-1">CRUNCH!</div>
+    <div class="comic-bg-text bg-2">NHAC!</div>
+    <div class="comic-bg-text bg-3">POW!</div>
+    <div class="comic-bg-text bg-4">CHOMP!</div>
+
+    <div class="login-card">
+        <div class="sticker-tag">ENTRAR!</div>
+
+        <div class="card-header">
+            <span class="logo-icon">🍔</span>
+            <h1 class="brand-name">BURGER BLAST</h1>
+        </div>
+
+        <form action="#">
+            <div class="form-group">
+                <label for="email">SUPER E-MAIL</label>
+                <input type="email" id="email" placeholder="heroi@blast.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">SENHA SECRETA</label>
+                <input type="password" id="password" placeholder="********" required>
+            </div>
+
+            <button type="submit" class="btn-submit">ACESSAR BASE</button>
+        </form>
+
+        <div class="card-footer">
+            <span>Ainda não é um herói?</span>
+            <a href="#">CRIAR CONTA</a>
+        </div>
+    </div>
+
+</body>
+</html>

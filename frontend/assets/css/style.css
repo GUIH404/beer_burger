@@ -1,451 +1,237 @@
 /* ================= CONFIGURAÇÕES GERAIS ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #1f2937; line-height: 1.5; }
 
-body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background-color: #f0f2f5; /* Cinza azulado do Sampa Smash */
-    color: #1f2937;
-}
-
-/* ================= NAVBAR (PRETO PURO) ================= */
-.navbar {
-    background-color: #000;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.nav-menu ul {
-    display: flex;
-    justify-content: center; /* No Sampa Smash o menu é centralizado */
-    list-style: none;
-    gap: 40px;
-    align-items: center;
-}
-
-.nav-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: 0.2s;
-}
-
-/* Efeito do botão "Início" branco */
-.active-link {
-    background-color: #fff;
-    color: #000 !important;
-}
+/* ================= NAVBAR ================= */
+.navbar { background-color: #000; height: 72px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-content { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+.nav-menu ul { display: flex; justify-content: center; list-style: none; gap: 40px; align-items: center; }
+.nav-menu a { color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; padding: 8px 16px; border-radius: 8px; transition: 0.2s; }
+.active-link { background-color: #fff; color: #000 !important; }
 
 /* ================= BANNER E LOGO ================= */
-.store-profile-section {
-    max-width: 1200px;
-    margin: 20px auto 0;
-    padding: 0 15px;
-}
+.store-profile-section { max-width: 1200px; margin: 20px auto 0; padding: 0 15px; }
+.promo-banner { width: 100%; height: 280px; background-color: #fff; padding: 6px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; position: relative; z-index: 1; }
+.promo-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 12px; }
 
-/* ================= BANNER AJUSTADO ================= */
-.promo-banner {
-    width: 100%;
-    /* Diminuímos a altura para o banner ficar mais "fino" */
-    height: 500px; /* Teste entre 250px e 300px para ver qual gosta mais */
-    
-    background-color: #fff; 
-    padding: 6px;           
-    border-radius: 16px;    
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    
-    display: flex;
-    overflow: hidden;       
-    position: relative;
-    z-index: 1;
-}
+@media (min-width: 769px) { .store-data-row { margin-top: -50px; } }
+.store-data-row { display: flex; align-items: flex-end; padding: 0 20px; margin-top: -60px; position: relative; z-index: 10; }
 
-.promo-banner img {
-    width: 100%;
-    height: 100%;
-    /* Mantém a foto centralizada e preenchendo o espaço sem distorcer */
-    object-fit: cover; 
-    object-position: center; 
-    border-radius: 12px; 
-    display: block;
-}
+.profile-logo { width: 150px; height: 150px; background: #fff; border-radius: 16px; padding: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: flex; justify-content: center; align-items: center; }
+.profile-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
 
-/* Ajuste específico para garantir que o logo não suba demais se o banner for curto */
-@media (min-width: 769px) {
-    .store-data-row {
-        margin-top: -50px; /* Ajuste fino para o logo subir no ponto certo */
-    }
-}
+.store-details { margin-left: 24px; padding-bottom: 10px; }
+.store-details h1 { font-size: 30px; font-weight: 800; color: #2e3e4d; margin-bottom: 4px; }
+.store-info { display: flex; gap: 10px; font-size: 14px; color: #6b7280; font-weight: 500; }
+.status-open { color: #10b981; font-weight: 700; }
 
-/* ================= LOGO E DADOS (CORREÇÃO DE CAMADA) ================= */
-.store-data-row {
-    display: flex;
-    align-items: flex-end;
-    padding: 0 20px;
-    margin-top: -60px; /* Sobe o logo para dentro do banner */
-    position: relative; 
-    z-index: 10; /* VALOR ALTO: Garante que o logo fique SEMPRE por cima da imagem */
-}
+/* ================= AÇÕES E BUSCA ================= */
+.store-actions { max-width: 1200px; margin: 35px auto; padding: 0 15px; }
+.list-search-container { display: flex; gap: 12px; }
 
-.profile-logo {
-    width: 150px;
-    height: 150px;
-    background: #fff;
-    border-radius: 16px;
-    padding: 8px; /* Espaço branco interno do logo */
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.btn-new-product { background-color: #fbbf24; color: #fff; border: none; border-radius: 8px; padding: 12px 20px; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s; box-shadow: 0 2px 5px rgba(251, 191, 36, 0.3); }
+.btn-new-product:hover { background-color: #f59e0b; transform: translateY(-1px); }
 
-.profile-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 8px;
-}
+.btn-list { width: 260px; background-color: #fff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 12px 16px; font-size: 15px; font-weight: 500; color: #4b5563; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.2s; }
+.btn-list:hover { background-color: #f9fafb; border-color: #d1d5db; }
 
+.search-wrapper { flex: 1; position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 16px; color: #9ca3af; font-size: 16px; }
+.input-search { width: 100%; padding: 12px 16px 12px 45px; border-radius: 8px; border: 1px solid #e1e4e8; background-color: #fff; font-size: 15px; color: #1f2937; outline: none; transition: 0.2s; }
+.input-search:focus { border-color: #d1d5db; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
 
-.store-details {
-    margin-left: 24px;
-    padding-bottom: 10px; /* Alinhamento fino */
-}
-
-.store-details h1 {
-    font-size: 32px;
-    font-weight: 800;
-    color: #2e3e4d; /* Cor exata do título */
-    margin-bottom: 4px;
-}
-
-.store-info {
-    display: flex;
-    gap: 10px;
-    font-size: 14px;
-    color: #6b7280;
-    font-weight: 500;
-}
-
-.status-open {
-    color: #10b981; /* Verde esmeralda do Sampa */
-    font-weight: 700;
-}
-
-/* ================= SEÇÃO DE BUSCA ================= */
-.store-actions {
-    max-width: 1200px; /* Largura idêntica ao banner */
-    margin: 35px auto;
-    padding: 0 15px;
-}
-
-.list-search-container {
-    display: flex;
-    gap: 12px; /* Espaçamento curto entre os itens */
-}
-
-/* Estilo do Botão de Categoria */
-.btn-list {
-    width: 260px; /* Largura fixa para manter o padrão */
-    background-color: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #4b5563;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-list:hover {
-    background-color: #f9fafb;
-    border-color: #d1d5db;
-}
-
-/* Wrapper para o Input de Busca (para colocar o ícone dentro) */
-.search-wrapper {
-    flex: 1; /* Faz a barra de busca ocupar o resto do espaço */
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.search-icon {
-    position: absolute;
-    left: 16px;
-    color: #9ca3af; /* Cor cinza do ícone */
-    font-size: 16px;
-}
-
-.input-search {
-    width: 100%;
-    padding: 12px 16px 12px 45px; /* Padding extra na esquerda para o ícone */
-    border-radius: 8px;
-    border: 1px solid #e1e4e8;
-    background-color: #fff;
-    font-size: 15px;
-    color: #1f2937;
-    outline: none; /* Remove a borda azul ao clicar */
-    transition: 0.2s;
-}
-
-.input-search:focus {
-    border-color: #d1d5db;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.input-search::placeholder {
-    color: #9ca3af;
-}
-
-/* ================= BOTÃO DE EXCLUIR (ADMIN) ================= */
-
-.btn-excluir {
-    background-color: #fff1f2; /* Fundo vermelho bem clarinho */
-    color: #e11d48;            /* Texto e ícone vermelho */
-    border: 1px solid #fecdd3;
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 12px;
-    transition: all 0.2s ease;
-    width: fit-content;
-}
-
-.btn-excluir i {
-    font-size: 14px;
-}
-
-.btn-excluir:hover {
-    background-color: #e11d48; /* Fica todo vermelho no hover */
-    color: #ffffff;
-    border-color: #e11d48;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(225, 29, 72, 0.2);
-}
-
-.btn-excluir:active {
-    transform: translateY(0);
-}
-
-/* Ajuste no card para o botão não ficar colado */
-.card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-/* ================= RESPONSIVO ================= */
-@media (max-width: 768px) {
-    .store-data-row {
-        flex-direction: column;
-        align-items: center;
-        margin-top: -75px;
-        text-align: center;
-    }
-    .store-details { margin-left: 0; margin-top: 15px; }
-    .list-search-container { flex-direction: column; }
-    .btn-list { width: 100%; }
-}
-
-/* Layout Principal */
-.menu-container-main {
-    max-width: 1200px;
-    margin: 30px auto;
-    display: flex;
-    gap: 25px;
-    padding: 0 15px;
-}
-
+/* ================= GRID DE PRODUTOS (ESTILO SAMPA SMASH) ================= */
+.menu-container-main { max-width: 1200px; margin: 30px auto; display: flex; gap: 30px; padding: 0 15px; }
 .menu-products-area { flex: 3; }
 .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
 
-/* Títulos das Categorias */
-.category-title {
-    font-size: 20px;
-    color: #3e3e3e;
-    margin: 30px 0 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+.category-title { font-size: 22px; color: #1a1a1a; margin: 30px 0 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 800; text-transform: capitalize; }
+
+.products-grid-list { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
 }
 
-/* Grid de 2 colunas para os cards horizontais */
-.products-grid-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-/* Estilo do Card Horizontal */
+/* O CARD REFEITO PARA FICAR IGUAL AO DO SAMPA SMASH */
 .product-card-horizontal {
     background: #fff;
     border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: 12px; /* Bordas arredondadas suaves */
+    padding: 0; /* Removemos padding do container para a imagem encostar na borda */
     display: flex;
     justify-content: space-between;
-    transition: 0.2s;
+    align-items: stretch; /* Garante que a imagem ocupe toda a altura */
+    transition: all 0.2s ease;
+    overflow: hidden; /* Corta a imagem nas bordas arredondadas */
+    min-height: 160px; /* Altura mínima consistente */
+    cursor: pointer;
+    position: relative;
 }
 
-.product-card-horizontal:hover { border-color: #bbb; }
-
-.card-content h3 { font-size: 15px; margin-bottom: 5px; }
-.card-content p { font-size: 12px; color: #717171; line-height: 1.4; }
-.card-content .price { display: block; margin-top: 10px; font-weight: bold; color: #2e3e4d; }
-
-.card-image { width: 85px; height: 85px; background: #f5f5f5; border-radius: 5px; }
-
-/* Estilo da Lateral (Fidelidade e Sacola) */
-.fidelity-card, .cart-box {
-    background: #fff;
-    border-radius: 8px;
-    border: 1px solid #e1e4e8;
-    padding: 15px;
+.product-card-horizontal:hover {
+    border-color: #fbbf24; /* Um detalhe amarelo ao passar o mouse */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
 }
 
-.f-header { display: flex; align-items: center; gap: 10px; font-weight: bold; margin-bottom: 10px; }
-.cart-empty { text-align: center; padding: 30px 0; color: #999; }
-.btn-checkout { width: 100%; padding: 12px; background: #ccc; border: none; border-radius: 5px; color: #fff; font-weight: bold; }
-
-/* ================= FOOTER ================= */
-
-/* ================= FOOTER ================= */
-.main-footer {
-    background-color: #fff;
-    border-top: 1px solid #e1e4e8;
-    margin-top: 80px;
-    padding-top: 50px;
-    color: #4b5563;
+/* Coluna da Esquerda (Texto) */
+.card-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-.footer-col h3 {
-    color: #1f2937;
-    font-size: 18px;
-    margin-bottom: 20px;
+.card-content h3 {
+    font-size: 16px;
     font-weight: 700;
-}
-
-.footer-col p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
-    text-decoration: none;
-    color: #6b7280;
-    font-size: 14px;
-    transition: 0.2s;
-}
-
-.footer-col ul li a:hover {
-    color: #000;
-    padding-left: 5px;
-}
-
-.footer-logo {
-    color: #000;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.footer-social a {
     color: #1f2937;
-    font-size: 20px;
-    transition: 0.3s;
+    margin-bottom: 8px;
+    text-transform: uppercase; /* Estilo premium */
 }
 
-.footer-social a:hover {
-    color: #facc15; /* Cor de abelha/mel no hover */
-    transform: scale(1.1);
-}
-
-/* Faixa Final */
-.footer-bottom {
-    margin-top: 50px;
-    padding: 25px 0;
-    border-top: 1px solid #f3f4f6;
-    background-color: #f9fafb;
-}
-
-.footer-bottom-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-bottom p {
+.card-content p {
     font-size: 13px;
-    color: #9ca3af;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Empurra o preço para baixo */
 }
 
-.payment-methods {
-    display: flex;
-    gap: 15px;
-    font-size: 24px;
-    color: #d1d5db;
+.card-content .price {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
 }
+
+/* Coluna da Direita (Imagem) */
+.card-image {
+    width: 150px; /* Largura fixa para a imagem */
+    height: auto; /* Altura automática baseada no card */
+    background: #f3f4f6;
+    flex-shrink: 0; /* Não deixa a imagem encolher */
+    border-left: 1px solid #f0f0f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha sem distorcer */
+}
+
+/* Botão Excluir (Minimalista na parte inferior) */
+.btn-excluir {
+    background: transparent;
+    color: #ef4444; /* Texto vermelho */
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+    width: fit-content;
+}
+
+.btn-excluir:hover {
+    color: #b91c1c; /* Vermelho mais escuro no hover */
+    text-decoration: underline;
+}
+
+/* ================= LATERAL (CARRINHO) ================= */
+.cart-box { background: #fff; border-radius: 12px; border: 1px solid #e1e4e8; padding: 20px; position: sticky; top: 90px; }
+.cart-header { display: flex; align-items: center; justify-content: space-between; font-weight: 800; margin-bottom: 15px; font-size: 18px; }
+.cart-empty { text-align: center; padding: 30px 0; color: #9ca3af; font-size: 14px; }
+.btn-checkout { width: 100%; padding: 14px; background: #e5e7eb; border: none; border-radius: 8px; color: #9ca3af; font-weight: 700; cursor: not-allowed; transition: 0.2s; }
+
+/* ================= FOOTER ================= */
+.main-footer { background-color: #fff; border-top: 1px solid #e1e4e8; margin-top: 80px; padding-top: 50px; color: #4b5563; }
+.footer-container { max-width: 1200px; margin: 0 auto; padding: 0 15px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.footer-col h3 { color: #1f2937; font-size: 16px; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; font-size: 14px; }
+.footer-col ul li a { text-decoration: none; color: #6b7280; transition: 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+
+.footer-bottom { margin-top: 50px; padding: 25px 0; border-top: 1px solid #f3f4f6; background-color: #f9fafb; }
+.footer-bottom-content { max-width: 1200px; margin: 0 auto; padding: 0 15px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #9ca3af; }
+
+/* ================= MODALS (FUNCIONALIDADES MANTIDAS) ================= */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 2000; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content { background-color: #fff; width: 90%; max-width: 800px; border-radius: 12px; position: relative; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; max-height: 90vh; }
+.close-modal-btn { position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); border: none; font-size: 24px; cursor: pointer; z-index: 10; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.close-modal-btn:hover { background: #fff; color: #000; transform: scale(1.05); }
+
+/* Modal Detalhes */
+.modal-body { display: flex; height: 100%; overflow-y: auto; }
+.modal-image-col { flex: 1; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; min-height: 300px; }
+.modal-image-col img { width: 100%; height: 100%; object-fit: cover; }
+.modal-info-col { flex: 1; padding: 30px; display: flex; flex-direction: column; }
+#modal-title { font-size: 24px; font-weight: 800; color: #1f2937; margin-bottom: 10px; line-height: 1.2; }
+
+/* LISTA DE INGREDIENTES NO MODAL (MANTIDO) */
+.modal-ingredients-section h4 { font-size: 14px; color: #111; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+#modal-ingredients-list { list-style: none; margin-bottom: 20px; }
+#modal-ingredients-list li { font-size: 14px; color: #4b5563; margin-bottom: 4px; display: flex; align-items: center; }
+#modal-ingredients-list li::before { content: "•"; color: #fbbf24; font-weight: bold; margin-right: 8px; font-size: 18px; }
+
+.modal-description { font-size: 15px; color: #6b7280; line-height: 1.6; margin-bottom: auto; }
+.modal-footer-actions { margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
+.price-qty-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: 600; }
+.modal-price-display { font-size: 20px; color: #059669; font-weight: 700; }
+.qty-selector { display: flex; align-items: center; border: 1px solid #d1d5db; border-radius: 8px; padding: 4px; }
+.qty-selector button { background: none; border: none; font-size: 18px; width: 32px; height: 32px; cursor: pointer; border-radius: 4px; transition: 0.2s; }
+.qty-selector button:hover { background: #f3f4f6; }
+#qty-number { width: 30px; text-align: center; font-weight: 600; }
+.actions-row { display: flex; gap: 15px; }
+.btn-add-modal { flex: 1; background-color: #000; color: #fff; border: none; border-radius: 8px; padding: 14px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; transition: 0.2s; }
+.btn-add-modal:hover { background-color: #222; transform: translateY(-1px); }
+
+/* Modal Criação (MANTIDO) */
+.modal-sm { max-width: 500px; }
+.modal-header { padding: 20px 25px; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center; }
+.modal-header h2 { font-size: 20px; color: #1f2937; font-weight: 700; }
+.modal-form-body { padding: 25px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: #4b5563; margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; outline: none; transition: 0.2s; font-family: inherit; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #fbbf24; ring: 2px solid rgba(251, 191, 36, 0.2); }
+.form-row { display: flex; gap: 15px; }
+.form-row .form-group { flex: 1; }
+
+/* Inputs de Ingredientes */
+.btn-add-ing-action { background: #f9fafb; color: #374151; border: 1px dashed #d1d5db; width: 100%; padding: 10px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; transition: 0.2s; text-align: center; }
+.btn-add-ing-action:hover { background: #f3f4f6; border-color: #9ca3af; }
+.ingredient-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.ingredient-row input { flex: 1; }
+.btn-remove-ing { background: #fee2e2; color: #ef4444; border: 1px solid #fecaca; width: 38px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+.btn-remove-ing:hover { background: #ef4444; color: #fff; }
+
+.btn-submit-create { width: 100%; margin-top: 15px; padding: 14px; background-color: #000; color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; font-size: 15px; }
+.btn-submit-create:hover { background-color: #333; transform: translateY(-1px); }
 
 /* Responsivo */
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-    }
-    .footer-bottom-content {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
+@media (max-width: 992px) { 
+    .products-grid-list { grid-template-columns: 1fr; } 
+}
+
+@media (max-width: 768px) { 
+    .store-data-row { flex-direction: column; align-items: center; text-align: center; margin-top: -75px; } 
+    .store-details { margin-left: 0; margin-top: 15px; } 
+    .list-search-container { flex-direction: column; } 
+    .btn-list, .btn-new-product { width: 100%; } 
+    .modal-body { flex-direction: column; } 
+    .footer-container { grid-template-columns: 1fr 1fr; } 
+    .footer-bottom-content { flex-direction: column; gap: 20px; text-align: center; }
+    
+    /* Ajuste do card mobile */
+    .card-image { width: 120px; }
 }
